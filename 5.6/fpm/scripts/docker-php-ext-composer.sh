@@ -10,7 +10,7 @@ curl -fsL --retry 3 -o "$SETUP_FILE" "$INSTALLER_URL"
 
 php -r " \
     \$hash = hash_file('SHA384', '${SETUP_FILE}'); \
-    if (!hash_equals(${SIGNATURE}, \$hash)) { \
+    if (!hash_equals('${SIGNATURE}', \$hash)) { \
         unlink('${SETUP_FILE}'); \
         echo 'Integrity check failed, installer is either corrupt or worse.' . PHP_EOL; \
         exit(1); \
