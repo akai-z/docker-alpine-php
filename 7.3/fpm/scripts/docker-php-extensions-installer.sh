@@ -8,7 +8,7 @@ for ext in $extensions
 do
   ext_status="$(echo "$ext" | cut -d '=' -f 2)"
 
-  if [ "$ext_status" -eq 1 ] || [ "$PHP_COMPLETE" -eq 1 ]; then
+  if [ "$ext_status" -eq 1 ] || [ "$PHP_FULL_INSTALL" -eq 1 ]; then
     ext_name="$( \
       echo "$ext" | \
       cut -d '=' -f 1 | \
