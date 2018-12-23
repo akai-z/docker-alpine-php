@@ -9,6 +9,7 @@ readonly SOURCE_DIR="docker-php-ext-cphalcon"
 
 apk add -u --no-cache --virtual .build-deps \
   autoconf \
+  bash \
   file \
   g++ \
   gcc \
