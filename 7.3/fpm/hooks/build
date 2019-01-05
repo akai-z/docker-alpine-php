@@ -3,4 +3,4 @@
 docker build \
   --build-arg PHP_FULL_INSTALL="$PHP_FULL_INSTALL" \
   -f "$DOCKERFILE_PATH" \
-  -t "$IMAGE_NAME" .
+  -t $DOCKER_REPO:${DOCKER_TAG//,/ -t $DOCKER_REPO:} .
