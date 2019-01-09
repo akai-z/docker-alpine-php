@@ -2,13 +2,14 @@
 
 set -eo pipefail
 
-readonly VERSION="tags/v3.4.2"
+readonly VERSION="latest"
 readonly REPOSITORY="phalcon/cphalcon"
 readonly SOURCE="https://api.github.com/repos/${REPOSITORY}/releases/${VERSION}"
 readonly SOURCE_DIR="docker-php-ext-cphalcon"
 
 apk add -u --no-cache --virtual .build-deps \
   autoconf \
+  bash \
   file \
   g++ \
   gcc \
