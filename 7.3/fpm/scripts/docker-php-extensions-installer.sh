@@ -4,7 +4,7 @@ set -eo pipefail
 
 extensions="$(printenv | grep "DOCKER_PHP")"
 
-for ext in $extensions  
+for ext in $extensions
 do
   ext_status="$(echo "$ext" | cut -d '=' -f 2)"
 
