@@ -1,6 +1,26 @@
 #!/bin/bash
 
+readonly FULL_INSTALL_TAG="full"
+readonly FULL_INSTALL_FLAG="PHP_FULL_INSTALL"
+
+build_flags=""
+build_args=""
+
+build_type="$( \
+  echo "$DOCKER_TAG" | \
+  cut -d '-' -f 2
+)"
+
+case "$build_type" in
+  "$FULL_INSTALL_TAG")   build_flags=$FULL_INSTALL_FLAG;;
+esac
+
+for build_flag in $build_flags
+do
+  build_args="${build_args} --build-arg ${build_flag}=1"
+done
+
 docker build \
-  --build-arg PHP_FULL_INSTALL="$PHP_FULL_INSTALL" \
+  $build_args \
   -f "$DOCKERFILE_PATH" \
   -t $DOCKER_REPO:${DOCKER_TAG//,/ -t $DOCKER_REPO:} .
