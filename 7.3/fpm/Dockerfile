@@ -25,6 +25,7 @@ RUN set -x \
     && apk update \
     && apk add -u --no-cache --virtual .build-deps \
         freetype-dev \
+        gettext-dev \
         icu-dev \
         libjpeg-turbo-dev \
         libpng-dev \
@@ -32,6 +33,7 @@ RUN set -x \
         libzip-dev \
     && apk add -u --no-cache \
         freetype \
+        gettext \
         icu \
         libjpeg-turbo \
         libpng \
@@ -47,6 +49,7 @@ RUN set -x \
     && docker-php-ext-install -j${NPROC} \
         bcmath \
         gd \
+        gettext \
         intl \
         mysqli \
         pdo_mysql \
