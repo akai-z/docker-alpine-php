@@ -5,6 +5,7 @@ LABEL maintainer="Ammar K."
 RUN set -x \
     && apk update \
     && apk add -u --no-cache --virtual .build-deps \
+        gettext-dev \
         freetype-dev \
         icu-dev \
         libjpeg-turbo-dev \
@@ -12,6 +13,7 @@ RUN set -x \
         libxslt-dev \
         libzip-dev \
     && apk add -u --no-cache \
+        gettext \
         freetype \
         icu \
         libjpeg-turbo \
@@ -26,6 +28,7 @@ RUN set -x \
     && docker-php-ext-install -j${NPROC} \
         bcmath \
         gd \
+        gettext \
         intl \
         mysqli \
         pdo_mysql \
