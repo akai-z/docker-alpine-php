@@ -26,16 +26,16 @@ COPY scripts/*.sh /usr/local/bin/
 RUN set -x \
     && apk update \
     && apk add -u --no-cache --virtual .build-deps \
-        gettext-dev \
         freetype-dev \
+        gettext-dev \
         icu-dev \
         libjpeg-turbo-dev \
         libpng-dev \
         libxslt-dev \
         zlib-dev \
     && apk add -u --no-cache \
-        gettext \
         freetype \
+        gettext \
         icu \
         libjpeg-turbo \
         libpng \
