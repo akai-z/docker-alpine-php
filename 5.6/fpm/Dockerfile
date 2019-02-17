@@ -27,6 +27,7 @@ RUN set -x \
     && apk update \
     && apk add -u --no-cache --virtual .build-deps \
         freetype-dev \
+        gettext-dev \
         icu-dev \
         libjpeg-turbo-dev \
         libmcrypt-dev \
@@ -35,6 +36,7 @@ RUN set -x \
         zlib-dev \
     && apk add -u --no-cache \
         freetype \
+        gettext \
         icu \
         libjpeg-turbo \
         libmcrypt \
@@ -50,6 +52,7 @@ RUN set -x \
     && docker-php-ext-install -j${NPROC} \
         bcmath \
         gd \
+        gettext \
         intl \
         mcrypt \
         mysqli \
