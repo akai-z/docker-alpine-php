@@ -2,6 +2,9 @@ FROM alpine:3.7
 
 LABEL maintainer="Ammar K."
 
+# This Dockerfile includes the official PHP image Dockerfile content.
+# As PHP 7.0 reached end of life and was removed from the official repository.
+
 # dependencies required for running "phpize"
 # these get automatically installed and removed by "docker-php-ext-*" (unless they're already installed)
 ENV PHPIZE_DEPS \
