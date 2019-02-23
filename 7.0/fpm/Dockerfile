@@ -172,9 +172,6 @@ RUN set -xe \
             | awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' \
     )" \
     && apk add --no-cache --virtual .php-rundeps $runDeps \
-    \
-    && apk del .build-deps \
-    \
 # https://github.com/docker-library/php/issues/443
     && pecl update-channels \
     && rm -rf /tmp/pear ~/.pearrc
