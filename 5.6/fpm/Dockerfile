@@ -115,7 +115,6 @@ RUN set -xe; \
     apk del .fetch-deps
 
 COPY scripts/* /usr/local/bin/
-COPY docker-php-source /usr/local/bin/
 
 RUN set -xe \
     && apk add --no-cache --virtual .build-deps \
@@ -183,8 +182,6 @@ RUN set -xe \
     && pecl update-channels \
     && rm -rf /tmp/pear ~/.pearrc
 
-COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
-
 WORKDIR /var/www/html
 
 RUN set -ex \
@@ -222,8 +219,6 @@ RUN set -ex \
         echo '[www]'; \
         echo 'listen = 9000'; \
     } | tee php-fpm.d/zz-docker.conf
-
-COPY scripts/*.sh /usr/local/bin/
 
 RUN set -x \
     && apk update \
