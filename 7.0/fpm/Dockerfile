@@ -253,7 +253,7 @@ RUN set -x \
         zip \
     && apk del .build-deps
 
-EXPOSE 9000
-
 ENTRYPOINT ["docker-php-entrypoint"]
+
+EXPOSE 9000
 CMD ["php-fpm"]
