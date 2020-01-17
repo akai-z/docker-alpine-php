@@ -41,6 +41,7 @@ RUN set -x \
         libxslt \
         libzip \
     && ln -s /usr/local/bin/docker-*.sh / \
+    && docker-php-extensions-installer.sh \
     && docker-php-ext-configure gd \
         --with-freetype=/usr/include/ \
         --with-jpeg=/usr/include/ \
