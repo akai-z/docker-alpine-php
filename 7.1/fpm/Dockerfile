@@ -272,7 +272,7 @@ RUN set -x \
         soap \
         xsl \
         zip \
-    && apk del .build-deps
+    && apk del --no-network .build-deps
 
 ENTRYPOINT ["docker-php-entrypoint"]
 
