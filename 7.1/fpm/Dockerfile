@@ -112,6 +112,7 @@ RUN set -eux; \
     \
     apk del --no-network .fetch-deps
 
+COPY scripts/* /usr/local/bin/
 COPY docker-php-source /usr/local/bin/
 
 RUN set -eux; \
