@@ -113,7 +113,6 @@ RUN set -eux; \
     apk del --no-network .fetch-deps
 
 COPY scripts/* /usr/local/bin/
-COPY docker-php-source /usr/local/bin/
 
 RUN set -eux; \
     apk add --no-cache --virtual .build-deps \
@@ -190,8 +189,6 @@ RUN set -eux; \
 # smoke test
     php --version
 
-COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
-
 WORKDIR /var/www/html
 
 RUN set -eux; \
@@ -233,8 +230,6 @@ RUN set -eux; \
 # Override stop signal to stop process gracefully
 # https://github.com/php/php-src/blob/17baa87faddc2550def3ae7314236826bc1b1398/sapi/fpm/php-fpm.8.in#L163
 STOPSIGNAL SIGQUIT
-
-COPY scripts/*.sh /usr/local/bin/
 
 RUN set -x \
     && apk update \
