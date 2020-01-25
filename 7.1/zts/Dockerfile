@@ -175,9 +175,6 @@ RUN set -eux; \
 
 COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
 
-ENTRYPOINT ["docker-php-entrypoint"]
-CMD ["php", "-a"]
-
 RUN set -x \
     && apk update \
     && apk add -u --no-cache --virtual .build-deps \
@@ -212,3 +209,6 @@ RUN set -x \
         xsl \
         zip \
     && apk del .build-deps
+
+ENTRYPOINT ["docker-php-entrypoint"]
+CMD ["php", "-a"]
