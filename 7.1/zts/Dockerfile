@@ -189,6 +189,7 @@ RUN set -eux; \
     php --version
 
 COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
+COPY scripts/*.sh /usr/local/bin/
 
 RUN set -x \
     && apk update \
