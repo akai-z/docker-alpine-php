@@ -186,6 +186,7 @@ RUN set -xe \
     && rm -rf /tmp/pear ~/.pearrc
 
 COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
+COPY scripts/*.sh /usr/local/bin/
 
 RUN set -x \
     && apk update \
