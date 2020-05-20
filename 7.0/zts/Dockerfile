@@ -114,6 +114,7 @@ RUN set -xe; \
     \
     apk del .fetch-deps
 
+COPY scripts/* /usr/local/bin/
 COPY docker-php-source /usr/local/bin/
 
 RUN set -xe \
