@@ -5,6 +5,25 @@ LABEL maintainer="Ammar K."
 # This Dockerfile includes the official PHP image Dockerfile content.
 # As PHP 5.6 reached end of life and was removed from the official repository.
 
+ARG DOCKER_PHP_AMQP=0
+ARG DOCKER_PHP_APCU=0
+ARG DOCKER_PHP_COMPOSER=0
+ARG DOCKER_PHP_GMP=0
+ARG DOCKER_PHP_IMAGICK=0
+ARG DOCKER_PHP_LDAP=0
+ARG DOCKER_PHP_MAILPARSE=0
+ARG DOCKER_PHP_MEMCACHED=0
+ARG DOCKER_PHP_MONGODB=0
+ARG DOCKER_PHP_OPCACHE=0
+ARG DOCKER_PHP_PCNTL=0
+ARG DOCKER_PHP_PHALCON=0
+ARG DOCKER_PHP_PSR=0
+ARG DOCKER_PHP_RAPHF=0
+ARG DOCKER_PHP_REDIS=0
+ARG DOCKER_PHP_SWOOLE=0
+ARG DOCKER_PHP_XDEBUG=0
+ARG PHP_FULL_INSTALL=0
+
 # dependencies required for running "phpize"
 # these get automatically installed and removed by "docker-php-ext-*" (unless they're already installed)
 ENV PHPIZE_DEPS \
