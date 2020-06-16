@@ -115,7 +115,6 @@ RUN set -xe; \
     apk del .fetch-deps
 
 COPY scripts/* /usr/local/bin/
-COPY docker-php-source /usr/local/bin/
 
 RUN set -xe \
     && apk add --no-cache --virtual .build-deps \
@@ -185,9 +184,6 @@ RUN set -xe \
 # https://github.com/docker-library/php/issues/443
     && pecl update-channels \
     && rm -rf /tmp/pear ~/.pearrc
-
-COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
-COPY scripts/*.sh /usr/local/bin/
 
 RUN set -x \
     && apk update \
