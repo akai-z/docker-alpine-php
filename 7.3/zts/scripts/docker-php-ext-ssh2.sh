@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-readonly VERSION="1.1.2"
+readonly VERSION="1.2"
 
 apk add -u --no-cache --virtual .build-deps \
   autoconf \
