@@ -41,8 +41,6 @@ RUN set -x \
         libpng \
         libxslt \
         libzip \
-    && ln -s /usr/local/bin/docker-*.sh / \
-    && docker-php-extensions-installer.sh \
     && docker-php-ext-configure gd \
         --with-freetype=/usr/include/ \
         --with-jpeg=/usr/include/ \
@@ -57,4 +55,6 @@ RUN set -x \
         soap \
         xsl \
         zip \
+    && ln -s /usr/local/bin/docker-*.sh / \
+    && docker-php-extensions-installer.sh \
     && apk del .build-deps
