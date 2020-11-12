@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-readonly SIGNATURE="baf1608c33254d00611ac1705c1d9958c817a1a33bce370c0595974b342601bd80b92a3f46067da89e3b06bff421f182"
+readonly SIGNATURE="$(wget -q -O - https://composer.github.io/installer.sig)"
 readonly INSTALLER_URL="https://getcomposer.org/installer"
 readonly SETUP_FILE="composer-setup.php"
 
