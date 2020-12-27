@@ -18,6 +18,8 @@ ARG DOCKER_PHP_SWOOLE=0
 ARG DOCKER_PHP_XDEBUG=0
 ARG PHP_FULL_INSTALL=0
 
+COPY scripts/*.sh /usr/local/bin/
+
 RUN set -x \
     && apk update \
     && apk add -u --no-cache --virtual .build-deps \
@@ -49,4 +51,5 @@ RUN set -x \
         pdo_mysql \
         soap \
         xsl \
-        zip
+        zip \
+    && ln -s /usr/local/bin/docker-*.sh /
