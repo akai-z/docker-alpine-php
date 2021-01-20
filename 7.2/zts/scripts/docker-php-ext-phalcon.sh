@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-readonly VERSION="tags/v3.4.2"
+readonly VERSION="tags/v4.1.0"
 readonly REPOSITORY="phalcon/cphalcon"
 readonly SOURCE="https://api.github.com/repos/${REPOSITORY}/releases/${VERSION}"
 readonly SOURCE_DIR="docker-php-ext-cphalcon"
