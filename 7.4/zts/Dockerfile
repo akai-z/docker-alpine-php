@@ -55,6 +55,5 @@ RUN set -x \
         soap \
         xsl \
         zip \
-    && ln -s /usr/local/bin/docker-*.sh / \
     && docker-php-extensions-installer.sh \
     && apk del .build-deps
