@@ -267,7 +267,6 @@ RUN set -x \
         soap \
         xsl \
         zip \
-    && ln -s /usr/local/bin/docker-*.sh / \
     && docker-php-extensions-installer.sh \
     && apk del --no-network .build-deps
 
